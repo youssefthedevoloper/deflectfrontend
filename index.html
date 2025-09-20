@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Asteroid Impact</title>
+<style>
+body {margin:0; padding:0; overflow:hidden; font-family:"Segoe UI", sans-serif; background:black;}
+.form {position:absolute; top:50%; right:30px; transform:translateY(-50%); background:rgba(20,20,20,0.85); padding:15px; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.4); color:white; width:240px; backdrop-filter:blur(6px);}
+.form h2 {text-align:center; margin-bottom:10px; font-weight:600; font-size:1.1rem; letter-spacing:0.5px;}
+.form-group {display:flex; flex-direction:column; margin-bottom:12px;}
+.form-group label {margin-bottom:4px; font-size:0.85rem; color:#ddd;}
+.form-group input {padding:6px 8px; border-radius:8px; border:none; outline:none; font-size:0.9rem; background:#2a2a2a; color:white; transition:all 0.2s ease-in-out;}
+.form-group input:focus {background:#333; box-shadow:0 0 0 2px #3fa9f5;}
+.disbtn {padding:8px; background:linear-gradient(90deg,#3fa9f5,#0077ff); border-radius:8px; border:none; cursor:pointer; font-size:0.9rem; font-weight:600; color:white; transition:0.3s ease-in-out; width:100%;}
+.disbtn:hover {opacity:0.85; transform:translateY(-2px);}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.161/build/three.module.js",
+    "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div class="form">
+<h2>Asteroid Impact</h2>
+<div class="form-group">
+<label for="mass">Mass (kg)</label>
+<input id="mass" type="number" min="1e6" max="1e12" step="1000" value="1e8">
+</div>
+<div class="form-group">
+<label for="velocity">Velocity (m/s)</label>
+<input id="velocity" type="number" min="11000" max="72000" step="100" value="20000">
+</div>
+<div class="form-group">
+<label for="strength">Strength (Pa)</label>
+<input id="strength" type="number" min="1e6" max="1e9" step="1e6" value="1e7">
+</div>
+<button class="disbtn" id="simulateBtn">Simulate</button>
+</div>
+<script type="module" src="main.js"></script>
+</body>
+</html>
